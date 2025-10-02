@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const searchInput = document.querySelector(".search input");
     const searchBtn = document.querySelector(".search button");
     const weatherIcon = document.querySelector(".weather-image");
+    const searchBox = document.querySelector(".searchbox");
 
     async function checkWeather (city){
         const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
@@ -50,6 +51,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
     
     searchBtn.addEventListener("click", ()=>{
         checkWeather(searchInput.value);
+        searchBox.value = '';
     });
 
 })
